@@ -1,0 +1,33 @@
+{
+    "name": "python",
+    "dockerFile": "Dockerfile",
+    "workspaceMount": "source=/home/docker-mgr/docker-mount/english-dictionary,target=/home/developer/project,type=bind,consistency=cached",
+    "workspaceFolder": "/home/developer/project",
+    "runArgs": [
+        "--name=ed-dev-env"
+    ],
+    "extensions": [
+        "ms-python.python",
+        "njpwerner.autodocstring"
+    ],
+    "settings": {
+        "editor.tabSize": 4,
+        "terminal.integrated.shell.linux": "/bin/fish",
+        "editor.rulers": [79],
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": false,
+        "python.linting.flake8Enabled": true,
+        "python.linting.lintOnSave": true,
+        "python.linting.flake8Args": [
+            "--ignore=W293, W503",
+            "--max-complexity", "20"
+        ],
+        "python.formatting.provider": "autopep8",
+        "python.formatting.autopep8Args": [
+            "--aggressive", "--aggressive"
+        ],
+        "autoDocstring.docstringFormat": "google",
+        "editor.formatOnSave": true
+    },
+    "shutdownAction": "stopContainer"
+}
